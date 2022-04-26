@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Microwave.Classes.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Microwave.Classes.Boundary
 {
-    public class Buzzer
+    public class Buzzer : IBuzzer
     {
-    }
+        public event EventHandler Buz;
 
-    public void 
+        public void BuzzerSound()
+        {
+            Buz?.Invoke(this, EventArgs.Empty);
+        }
+    }
 
 }
