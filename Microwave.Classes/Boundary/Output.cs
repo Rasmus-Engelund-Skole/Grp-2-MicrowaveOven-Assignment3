@@ -9,11 +9,5 @@ namespace Microwave.Classes.Boundary
         {
             System.Console.WriteLine(line);
         }
-        
-        public void Beep()
-        {
-            Console.Beep();
-        }
-
     }
 }

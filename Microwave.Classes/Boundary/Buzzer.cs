@@ -16,11 +16,10 @@ namespace Microwave.Classes.Boundary
 
         public void BuzzerSound()
         {
-            myOutput.OutputLine("Beep, Beep, Beep");
             for (int i = 0; i <3; i++)
             {
-                myOutput.Beep();
-                
+                myOutput.OutputLine("--BEEP--");
+                Console.Beep();     
             }
         }
     }
