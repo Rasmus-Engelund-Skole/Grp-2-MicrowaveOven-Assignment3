@@ -4,14 +4,10 @@ using System.Text;
 
 namespace Microwave.Classes.Interfaces
 {
-    public class IBuzzer
+    public interface IBuzzer
     {
-        public event EventHandler Buzzer;
+        public event EventHandler Buz;
 
-        public void BuzzerSound()
-        {
-            Buzzer?.Invoke(this, EventArgs.Empty);
-        }
-
+        public void BuzzerSound();
     }
 }
