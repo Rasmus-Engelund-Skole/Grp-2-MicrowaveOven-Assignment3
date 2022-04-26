@@ -20,11 +20,13 @@ namespace Microwave.App
 
             PowerTube powerTube = new PowerTube(output);
 
+            Buzzer buzzer = new Buzzer();
+
             Light light = new Light(output);
 
             Microwave.Classes.Boundary.Timer timer = new Timer();
 
-            CookController cooker = new CookController(timer, display, powerTube);
+            CookController cooker = new CookController(timer, display, powerTube, buzzer);
 
             UserInterface ui = new UserInterface(powerButton, timeButton, startCancelButton, door, display, light, cooker);
 
