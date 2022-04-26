@@ -10,7 +10,6 @@ namespace Microwave.Classes.Interfaces
     {
         event EventHandler Pressed;
 
-        void BuzzerSound();
-
+        void Press();
     }
 }
