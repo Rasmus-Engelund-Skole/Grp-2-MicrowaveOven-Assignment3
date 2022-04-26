@@ -24,7 +24,7 @@ namespace Microwave.Test.Unit
 
         [Test]
         public void BuzzerSound_Beep()
-    {
+        {
             uut.BuzzerSound();
             
             output.Received(3).OutputLine(Arg.Is<string>(str => str.Contains("BEEP")));

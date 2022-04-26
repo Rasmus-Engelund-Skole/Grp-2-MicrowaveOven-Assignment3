@@ -31,14 +31,5 @@ namespace Microwave.Test.Unit
             Assert.That(str.ToString().Contains("Test"));
 
         }
-
-        //public void BeepCalled()
-        //{
-        //    uut.Beep();
-
-        //    Assert.That()
-
-        //}
-
     }
 }
