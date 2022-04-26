@@ -154,9 +154,13 @@ namespace Microwave.Test.Unit
         [TestCase(10)]
         public void Extra_Time_Added(int id)
         {
+            //Set start time to 60sec
+            uut.Start(60);
+
+            //Add time to the 60sec
             uut.TimeButton(id);
 
-            Assert.That(uut.TimeRemaining, Is.EqualTo(id));
+            Assert.That(uut.TimeRemaining, Is.EqualTo(60+id));
         }
     }
 }
