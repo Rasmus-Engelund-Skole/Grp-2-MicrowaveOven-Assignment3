@@ -32,6 +32,10 @@ namespace Microwave.Classes.Boundary
         {
             timer.Enabled = false;
         }
+        public void TimeButton(int time)
+        {
+            TimeRemaining += time;
+        }
 
         private void Expire()
         {
