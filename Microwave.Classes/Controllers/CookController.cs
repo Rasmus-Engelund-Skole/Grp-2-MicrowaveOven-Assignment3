@@ -38,7 +38,6 @@ namespace Microwave.Classes.Controllers
             myPowerTube = powerTube;
             myBuzzer = buzzer;
 
-            myBuzzer.Buz += new EventHandler(OnTimerExpired);
             timer.Expired += new EventHandler(OnTimerExpired);
             timer.TimerTick += new EventHandler(OnTimerTick);
         }
@@ -71,6 +70,7 @@ namespace Microwave.Classes.Controllers
                 isCooking = false;
                 myPowerTube.TurnOff();
                 UI.CookingIsDone();
+                myBuzzer.BuzzerSound();
             }
         }
 
