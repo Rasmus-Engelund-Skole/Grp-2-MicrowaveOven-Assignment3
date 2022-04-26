@@ -11,7 +11,6 @@ namespace Microwave.App
             Button startCancelButton = new Button();
             Button powerButton = new Button();
             Button timeButton = new Button();
-
             Door door = new Door();
 
             Output output = new Output();

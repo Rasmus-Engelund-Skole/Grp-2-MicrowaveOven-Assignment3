@@ -14,7 +14,7 @@ namespace Microwave.Classes.Interfaces
         event EventHandler TimerTick;
 
         void Start(int time);
-        void TimeButton(int time);
+        void TimeButton();
         void Stop();
     }
 }
