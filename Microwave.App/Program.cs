@@ -19,7 +19,7 @@ namespace Microwave.App
 
             PowerTube powerTube = new PowerTube(output);
 
-            Buzzer buzzer = new Buzzer();
+            Buzzer buzzer = new Buzzer(output);
 
             Light light = new Light(output);
 
