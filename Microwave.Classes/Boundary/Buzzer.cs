@@ -7,12 +7,21 @@ namespace Microwave.Classes.Boundary
 {
     public class Buzzer : IBuzzer
     {
-        public event EventHandler Buz;
+        private IOutput myOutput;
+
+        public Buzzer(IOutput output)
+        {
+            myOutput = output;
+        }
 
         public void BuzzerSound()
         {
-            Buz?.Invoke(this, EventArgs.Empty);
+            myOutput.OutputLine("Beep, Beep, Beep");
+            for (int i = 0; i <3; i++)
+            {
+                myOutput.Beep();
+                
+            }
         }
     }
-
 }
