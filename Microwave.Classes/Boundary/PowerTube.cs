@@ -5,16 +5,20 @@ namespace Microwave.Classes.Boundary
 {
     public class PowerTube : IPowerTube
     {
-        public int Power{ get; set; }
+        private int Power{ get; set; }
 
         private IOutput myOutput;
 
         private bool IsOn = false;
 
-        public PowerTube(IOutput output, int watts)
+        public PowerTube(IOutput output, int MaximumPower)
         {
             myOutput = output;
-            Power = watts;
+
+            if (MaximumPower < 50)
+                throw new ArgumentOutOfRangeException("MaximumPower", MaximumPower, "The Maximum Power must be 50 watts or higher");
+            else
+            Power = MaximumPower;
         }
 
         public void TurnOn(int power)

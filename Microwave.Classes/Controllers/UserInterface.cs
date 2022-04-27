@@ -40,6 +40,9 @@ namespace Microwave.Classes.Controllers
             myCooker = cooker;
             myLight = light;
             myDisplay = display;
+            if (MaxPower < 50)
+                throw new ArgumentOutOfRangeException("MaxPower", MaxPower, "The Maximum Power must be 50 watts or higher");
+            else
             maxPower = MaxPower;
         }
 
