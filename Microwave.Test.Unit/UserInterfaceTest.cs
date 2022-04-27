@@ -32,13 +32,14 @@ namespace Microwave.Test.Unit
             light = Substitute.For<ILight>();
             display = Substitute.For<IDisplay>();
             cooker = Substitute.For<ICookController>();
+            int maxPowerAttribute = 700;
 
             uut = new UserInterface(
                 powerButton, timeButton, startCancelButton,
                 door,
                 display,
                 light,
-                cooker);
+                cooker, maxPowerAttribute);
         }
 
         [Test]
@@ -196,6 +197,8 @@ namespace Microwave.Test.Unit
         [Test]
         public void Ready_PowerAndTime_CookerIsCalledCorrectly()
         {
+            cooker.SetPowerTubeValue(700);
+
             powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
             // Now in SetPower
             powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
@@ -213,6 +216,8 @@ namespace Microwave.Test.Unit
         [Test]
         public void Ready_FullPower_CookerIsCalledCorrectly()
         {
+            cooker.SetPowerTubeValue(700);
+
             for (int i = 50; i <= 700; i += 50)
             {
                 powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
