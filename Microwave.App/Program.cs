@@ -17,7 +17,7 @@ namespace Microwave.App
 
             Display display = new Display(output);
 
-            PowerTube powerTube = new PowerTube(output);
+            PowerTube powerTube = new PowerTube(output, 500);
 
             Buzzer buzzer = new Buzzer(output);
 
@@ -34,7 +34,8 @@ namespace Microwave.App
 
             // Simulate a simple sequence
 
-            powerButton.Press();
+            for (int i = 0; i < 11; i++)
+                powerButton.Press();
 
             timeButton.Press();
 
