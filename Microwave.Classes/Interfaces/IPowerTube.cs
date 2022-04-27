@@ -8,7 +8,6 @@ namespace Microwave.Classes.Interfaces
 {
     public interface IPowerTube
     {
-        int Power{ get; set; }
         void TurnOn(int power);
 
         void TurnOff();
