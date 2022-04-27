@@ -5,7 +5,7 @@ namespace Microwave.Classes.Boundary
 {
     public class PowerTube : IPowerTube
     {
-        public int Power { get; set; }
+        public int Power{ get; set; }
 
         private IOutput myOutput;
 
@@ -19,7 +19,7 @@ namespace Microwave.Classes.Boundary
 
         public void TurnOn(int power)
         {
-            if (power < 1 || 700 < Power)
+            if (power < 1 || Power < power)
             {
                 throw new ArgumentOutOfRangeException("power", power, "Must be between 1 and " + Power + " (incl.)");
             }
