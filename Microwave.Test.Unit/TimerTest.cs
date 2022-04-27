@@ -169,7 +169,7 @@ namespace Microwave.Test.Unit
             //Add 30sec to TimeRemaining
             uut.TimeButton();
 
-            Assert.That(uut.TimeRemaining, Is.EqualTo(90));
+            Assert.That(uut.TimeRemaining, Is.EqualTo(30));
         }
     }
 }
