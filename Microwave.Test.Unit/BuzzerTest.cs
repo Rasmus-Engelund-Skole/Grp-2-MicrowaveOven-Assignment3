@@ -23,7 +23,7 @@ namespace Microwave.Test.Unit
         }
 
         [Test]
-        public void BuzzerSound_Beep()
+        public void BuzzerSound_BeepOnConsole()
         {
             uut.BuzzerSound();
             
