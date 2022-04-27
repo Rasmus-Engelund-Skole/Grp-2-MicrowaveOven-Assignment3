@@ -67,20 +67,18 @@ namespace Microwave.Test.Unit
         [TestCase(0)]
         [TestCase(1)]
         [TestCase(49)]
-        public void NewPowertube_MaxPowerLessThan50(int maximumpower)
+        public void NewPowertube_MaxPowerLessThan50_ThrowsException(int maximumpower)
         {
-            uut = new PowerTube(output, maximumpower);
-            Assert.That(uut.Power, Is.EqualTo(50));
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => new PowerTube(output, maximumpower));
         }
 
         [TestCase(50)]
         [TestCase(200)]
         [TestCase(1000)]
         [TestCase(int.MaxValue)]
-        public void NewPowertube_MaxPowerEqualToOrBiggerThan50(int maximumpower)
+        public void NewPowertube_MaxPowerEqualToOrBiggerThan50_DoesNotThrowException(int maximumpower)
         {
-            uut = new PowerTube(output, maximumpower);
-            Assert.That(uut.Power, Is.EqualTo(maximumpower));
+            Assert.DoesNotThrow(() => new PowerTube(output, maximumpower));
         }
 
 

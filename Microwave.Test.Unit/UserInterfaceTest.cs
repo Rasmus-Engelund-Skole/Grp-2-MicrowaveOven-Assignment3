@@ -337,6 +337,38 @@ namespace Microwave.Test.Unit
         }
 
 
+
+        [TestCase(int.MinValue)]
+        [TestCase(-1)]
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(49)]
+        public void NewPowertube_MaxPowerLessThan50(int maximumpower)
+        {
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => new UserInterface(
+                powerButton, timeButton, startCancelButton,
+                door,
+                display,
+                light,
+                cooker, maximumpower));
+        }
+
+        [TestCase(50)]
+        [TestCase(200)]
+        [TestCase(1000)]
+        [TestCase(int.MaxValue)]
+        public void NewPowertube_MaxPowerEqualToOrBiggerThan50(int maximumpower)
+        {
+            Assert.DoesNotThrow(() => new UserInterface(
+                powerButton, timeButton, startCancelButton,
+                door,
+                display,
+                light,
+                cooker, maximumpower));
+        }
+
+
+
     }
 
 }
