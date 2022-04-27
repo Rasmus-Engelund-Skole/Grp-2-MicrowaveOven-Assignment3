@@ -61,5 +61,28 @@ namespace Microwave.Test.Unit
             uut.TurnOn(50);
             Assert.Throws<System.ApplicationException>(() => uut.TurnOn(60));
         }
+
+        [TestCase(int.MinValue)]
+        [TestCase(-1)]
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(49)]
+        public void NewPowertube_MaxPowerLessThan50(int maximumpower)
+        {
+            uut = new PowerTube(output, maximumpower);
+            Assert.That(uut.Power, Is.EqualTo(50));
+        }
+
+        [TestCase(50)]
+        [TestCase(200)]
+        [TestCase(1000)]
+        [TestCase(int.MaxValue)]
+        public void NewPowertube_MaxPowerEqualToOrBiggerThan50(int maximumpower)
+        {
+            uut = new PowerTube(output, maximumpower);
+            Assert.That(uut.Power, Is.EqualTo(maximumpower));
+        }
+
+
     }
 }
