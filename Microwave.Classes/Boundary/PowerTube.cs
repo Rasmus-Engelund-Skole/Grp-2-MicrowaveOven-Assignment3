@@ -14,6 +14,10 @@ namespace Microwave.Classes.Boundary
         public PowerTube(IOutput output, int watts)
         {
             myOutput = output;
+
+            if (watts < 50)
+                Power = 50;
+            else
             Power = watts;
         }
 
