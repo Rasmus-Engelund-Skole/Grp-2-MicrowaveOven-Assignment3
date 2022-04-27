@@ -149,7 +149,7 @@ namespace Microwave.Test.Unit
         }
 
         [Test]
-        public void Extra_Time_Added()
+        public void Extra_Time_Added_TimeRemainingEquals90()
         {
             //Set start time to 60sec
             uut.Start(60);
@@ -158,6 +158,16 @@ namespace Microwave.Test.Unit
             uut.TimeButton();
 
             Assert.That(uut.TimeRemaining, Is.EqualTo(90));
+        }
+
+        [Test]
+        public void Extra_Time_Added_TimeRemainingEquals30()
+        {
+            uut.Start(0);
+
+            uut.TimeButton();
+
+            Assert.That(uut.TimeRemaining, Is.EqualTo(30));
         }
     }
 }
