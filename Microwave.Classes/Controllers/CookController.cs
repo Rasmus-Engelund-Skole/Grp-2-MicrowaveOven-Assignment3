@@ -53,13 +53,6 @@ namespace Microwave.Classes.Controllers
             myTimer.Start(time);
             isCooking = true;
         }
-        public void TimeButton()
-        {
-            if (isCooking)
-            {
-                myTimer.TimeButton();
-            }
-        }
 
         public void Stop()
         {
