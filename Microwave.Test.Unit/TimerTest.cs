@@ -163,10 +163,8 @@ namespace Microwave.Test.Unit
         [Test]
         public void Extra_Time_Added_TimeRemainingEquals30()
         {
-            //Set start time to 60sec
             uut.Start(0);
 
-            //Add 30sec to TimeRemaining
             uut.TimeButton();
 
             Assert.That(uut.TimeRemaining, Is.EqualTo(30));
