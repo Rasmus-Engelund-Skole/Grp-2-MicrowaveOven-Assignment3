@@ -40,6 +40,9 @@ namespace Microwave.Classes.Controllers
             myCooker = cooker;
             myLight = light;
             myDisplay = display;
+            if (MaxPower < 50)
+                maxPower = 50;
+            else
             maxPower = MaxPower;
         }
 
