@@ -47,13 +47,6 @@ namespace Microwave.Classes.Controllers
             return myPowerTube.Power;
         }
 
-        public void SetPowerTubeValue(int Power)
-        {
-            if (Power < 0)
-                throw new ArgumentOutOfRangeException("power", Power, "Must be bigger than 0");
-            myPowerTube.Power = Power;
-        }
-
         public void StartCooking(int power, int time)
         {
             myPowerTube.TurnOn(power);

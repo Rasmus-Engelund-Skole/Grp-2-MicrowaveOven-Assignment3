@@ -10,7 +10,6 @@ namespace Microwave.Classes.Interfaces
     {
         int GetPowerTubeValue();
 
-        void SetPowerTubeValue(int value);
         void StartCooking(int power, int time);
         void Stop();
     }

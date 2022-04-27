@@ -17,7 +17,7 @@ namespace Microwave.Classes.Controllers
         private ILight myLight;
         private IDisplay myDisplay;
 
-        private int maxPower = 700;
+        private int maxPower;
         private int powerLevel = 50;
         private int time = 1;
 
