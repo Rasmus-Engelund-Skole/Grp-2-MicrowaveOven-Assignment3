@@ -1,4 +1,5 @@
 ﻿using Microwave.Classes.Interfaces;
+using System;
 
 namespace Microwave.Classes.Boundary
 {
@@ -8,6 +9,5 @@ namespace Microwave.Classes.Boundary
         {
             System.Console.WriteLine(line);
         }
-        
     }
 }
