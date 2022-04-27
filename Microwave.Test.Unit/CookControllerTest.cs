@@ -74,6 +74,7 @@ namespace Microwave.Test.Unit
             timer.Expired += Raise.EventWith(this, EventArgs.Empty);
 
             ui.Received().CookingIsDone();
+            buzzer.Received(1).BuzzerSound();
         }
 
         [Test]
