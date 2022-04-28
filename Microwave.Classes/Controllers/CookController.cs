@@ -46,13 +46,12 @@ namespace Microwave.Classes.Controllers
         public void TimeButton()
         {
             if (isCooking)
-                myTimer.TimeButton();
-        }
+            {
+                myTimer.UpdateTime();
 
-        public void TimeButton()
-        {
-            if (isCooking)
-                myTimer.TimeButton();
+                int remaining = myTimer.TimeRemaining;
+                myDisplay.ShowTime(remaining / 60, remaining % 60);
+            }
         }
 
         public void StartCooking(int power, int time)

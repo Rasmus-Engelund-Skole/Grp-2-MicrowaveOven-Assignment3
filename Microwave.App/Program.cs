@@ -44,8 +44,11 @@ namespace Microwave.App
             // The simple sequence should now run
 
             System.Console.WriteLine("When you press enter, the program will stop");
-            // Wait for input
 
+            // We add 30 seconds to the current timer, so time should be 1:30 at the start
+            timeButton.Press();
+
+            // Wait for input
             System.Console.ReadLine();
         }
     }

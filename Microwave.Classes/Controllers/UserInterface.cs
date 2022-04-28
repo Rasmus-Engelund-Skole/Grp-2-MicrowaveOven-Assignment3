@@ -78,6 +78,8 @@ namespace Microwave.Classes.Controllers
                 case States.SETTIME:
                     time += 1;
                     myDisplay.ShowTime(time, 0);
+                    break;
+                case States.COOKING:
                     myCooker.TimeButton();
                     break;
             }
