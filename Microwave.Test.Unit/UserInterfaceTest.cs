@@ -367,7 +367,18 @@ namespace Microwave.Test.Unit
                 cooker, maximumpower));
         }
 
+        [Test]
+        public void SetTime_While_Cooking()
+        {
+            powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            powerButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            timeButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            timeButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
 
+            startCancelButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            timeButton.Pressed += Raise.EventWith(this, EventArgs.Empty);
+            cooker.Received(1).TimeButton();
+        }
 
     }
 
