@@ -86,5 +86,23 @@ namespace Microwave.Test.Unit
             powerTube.Received().TurnOff();
         }
 
+        [Test]
+        public void StartCooking_Function_Received()
+        {
+            uut.StartCooking(50, 60);
+            uut.TimeButton();
+
+            timer.Received().UpdateTime();
+        }
+
+        [Test]
+        public void TimeButton_Used_TimeAdded()
+        {
+            uut.StartCooking(50, 60);
+            uut.TimeButton();
+
+            display.Received().ShowTime(0, 0);
+        }
+
     }
 }
