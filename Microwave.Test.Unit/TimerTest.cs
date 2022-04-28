@@ -155,7 +155,7 @@ namespace Microwave.Test.Unit
             uut.Start(60);
 
             //Add 30sec to TimeRemaining
-            uut.TimeButton();
+            uut.UpdateTime();
 
             Assert.That(uut.TimeRemaining, Is.EqualTo(90));
         }
@@ -167,7 +167,7 @@ namespace Microwave.Test.Unit
             uut.Start(0);
 
             //30 sec are added to timer
-            uut.TimeButton();
+            uut.UpdateTime();
 
             Assert.That(uut.TimeRemaining, Is.EqualTo(30));
         }

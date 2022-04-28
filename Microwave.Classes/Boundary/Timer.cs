@@ -32,7 +32,7 @@ namespace Microwave.Classes.Boundary
         {
             timer.Enabled = false;
         }
-        public void TimeButton()
+        public void UpdateTime()
         {
             //Add 30sec to time
             TimeRemaining += 30;
