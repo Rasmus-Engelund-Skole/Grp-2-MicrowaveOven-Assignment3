@@ -43,6 +43,12 @@ namespace Microwave.Classes.Controllers
         }
 
 
+        public void TimeButton()
+        {
+            if (isCooking)
+                myTimer.TimeButton();
+        }
+
         public void StartCooking(int power, int time)
         {
             myPowerTube.TurnOn(power);
