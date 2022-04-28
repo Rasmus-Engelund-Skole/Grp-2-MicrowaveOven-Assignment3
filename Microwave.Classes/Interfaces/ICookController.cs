@@ -11,5 +11,6 @@ namespace Microwave.Classes.Interfaces
         int GetPowerTubeValue();
         void StartCooking(int power, int time);
         void Stop();
+        void TimeButton();
     }
 }
